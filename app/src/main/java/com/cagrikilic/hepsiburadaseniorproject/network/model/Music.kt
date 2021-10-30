@@ -1,0 +1,69 @@
+package com.cagrikilic.hepsiburadaseniorproject.network.model
+
+
+import com.squareup.moshi.Json
+
+data class Music(
+    @Json(name = "artistId")
+    var artistId: Int?,
+    @Json(name = "artistName")
+    var artistName: String?,
+    @Json(name = "artistViewUrl")
+    var artistViewUrl: String?,
+    @Json(name = "artworkUrl100")
+    var artworkUrl100: String?,
+    @Json(name = "artworkUrl30")
+    var artworkUrl30: String?,
+    @Json(name = "artworkUrl60")
+    var artworkUrl60: String?,
+    @Json(name = "collectionCensoredName")
+    var collectionCensoredName: String?,
+    @Json(name = "collectionExplicitness")
+    var collectionExplicitness: String?,
+    @Json(name = "collectionId")
+    var collectionId: Int?,
+    @Json(name = "collectionName")
+    var collectionName: String?,
+    @Json(name = "collectionPrice")
+    var collectionPrice: Double?,
+    @Json(name = "collectionViewUrl")
+    var collectionViewUrl: String?,
+    @Json(name = "country")
+    var country: String?,
+    @Json(name = "currency")
+    var currency: String?,
+    @Json(name = "discCount")
+    var discCount: Int?,
+    @Json(name = "discNumber")
+    var discNumber: Int?,
+    @Json(name = "isStreamable")
+    var isStreamable: Boolean?,
+    @Json(name = "kind")
+    var kind: String?,
+    @Json(name = "previewUrl")
+    var previewUrl: String?,
+    @Json(name = "primaryGenreName")
+    var primaryGenreName: String?,
+    @Json(name = "releaseDate")
+    var releaseDate: String?,
+    @Json(name = "trackCensoredName")
+    var trackCensoredName: String?,
+    @Json(name = "trackCount")
+    var trackCount: Int?,
+    @Json(name = "trackExplicitness")
+    var trackExplicitness: String?,
+    @Json(name = "trackId")
+    var trackId: Int?,
+    @Json(name = "trackName")
+    var trackName: String?,
+    @Json(name = "trackNumber")
+    var trackNumber: Int?,
+    @Json(name = "trackPrice")
+    var trackPrice: Double?,
+    @Json(name = "trackTimeMillis")
+    var trackTimeMillis: Int?,
+    @Json(name = "trackViewUrl")
+    var trackViewUrl: String?,
+    @Json(name = "wrapperType")
+    var wrapperType: String?
+)
