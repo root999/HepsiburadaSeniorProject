@@ -2,10 +2,17 @@ package com.cagrikilic.hepsiburadaseniorproject
 
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import org.w3c.dom.Text
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 @BindingAdapter("imageUrl")
     fun bindImage(imgView: ImageView, imgUrl: String?) {
@@ -38,9 +45,14 @@ import com.bumptech.glide.request.RequestOptions
             }
         }
     }
-//    @BindingAdapter("listData")
-//    fun bindRecyclerView(recyclerView: RecyclerView,
-//                         data: List<Movie>?) {
-//        val adapter = recyclerView.adapter as SearchFragmentAdapter
-//        adapter.submitList(data)
-//    }
+    @BindingAdapter("formatDate")
+    fun bindDate(textView:TextView,
+                releaseDate : String?){
+      releaseDate.let {
+          val outputFormat: DateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.US)
+          val inputFormat: DateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US)
+          val date: Date = inputFormat.parse(it)
+          val outputText: String = outputFormat.format(date)
+          textView.text = outputText
+      }
+    }

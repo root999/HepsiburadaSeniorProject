@@ -6,6 +6,7 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.cagrikilic.ItunesAppi
 import com.cagrikilic.hepsiburadaseniorproject.network.model.Media
+import com.cagrikilic.hepsiburadaseniorproject.network.model.MediaType
 import com.cagrikilic.hepsiburadaseniorproject.repo.SearchRepository
 import kotlinx.coroutines.launch
 
@@ -25,12 +26,13 @@ class SearchViewModel(private val repository: SearchRepository) : ViewModel(){
     val status: LiveData<DataStatus>
         get() = _status
 
-    private val _navigateToSelectedMedia = MutableLiveData<Media>()
-    val navigateToSelectedMedia: MutableLiveData<Media>
+    private val _navigateToSelectedMedia = MutableLiveData<MediaType>()
+    val navigateToSelectedMedia: MutableLiveData<MediaType>
         get() = _navigateToSelectedMedia
 
 
-    fun displayMediaDetails(media: Media) {
+    fun displayMediaDetails(mediaId: Int?, mediaType : String?) {
+        val media = MediaType(mediaId,mediaType)
         _navigateToSelectedMedia.value = media
     }
 

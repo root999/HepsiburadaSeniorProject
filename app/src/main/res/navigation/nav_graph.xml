@@ -20,7 +20,12 @@
         android:label="detail_fragment"
         tools:layout="@layout/detail_fragment"
         >
-        <argument android:name="selectedMedia"
-            app:argType="com.cagrikilic.hepsiburadaseniorproject.network.model.Media"/>
+        <argument android:name="mediaId"
+            app:argType="integer"/>
+        <argument
+            android:name="mediaType"
+            app:argType="string" />
+
+
     </fragment>
 </navigation>
