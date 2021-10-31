@@ -13,3 +13,6 @@ This project was developed using MVVM for Hepsiburada Android Bootcamp. In the p
 * [OkHttp](https://square.github.io/okhttp/)
 * [Coroutines](https://developer.android.com/kotlin/coroutines)
 * [Paging3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
+
+
+![Alt Text](gif.gif)
