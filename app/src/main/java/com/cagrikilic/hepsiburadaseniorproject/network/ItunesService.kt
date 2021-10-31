@@ -1,8 +1,7 @@
 package com.cagrikilic
 
 
-import com.cagrikilic.hepsiburadaseniorproject.network.model.Media
-import com.cagrikilic.hepsiburadaseniorproject.network.model.ServiceResponse
+import com.cagrikilic.hepsiburadaseniorproject.network.model.*
 import com.localebro.okhttpprofiler.OkHttpProfilerInterceptor
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -38,7 +37,7 @@ interface ItunesServiceApi{
     suspend fun getMedia(
         @Query("term")
         term:String,
-        @Query("media")
+        @Query("entity")
         media : String = "movie",
         @Query("offset")
         offset : Int,
@@ -46,6 +45,29 @@ interface ItunesServiceApi{
         limit : Int
     ) : ServiceResponse<Media>
 
+    @GET("lookup")
+    suspend fun getMovieDetails(
+        @Query("id")
+        id:Int,
+    ): ServiceResponse<Movie>
+
+    @GET("lookup")
+    suspend fun getEbookDetails(
+        @Query("id")
+        id:Int
+    ): ServiceResponse<Ebook>
+
+    @GET("lookup")
+    suspend fun getMusicDetails(
+        @Query("id")
+        id:Int
+    ): ServiceResponse<Music>
+
+    @GET("lookup")
+    suspend fun getSoftwareDetails(
+        @Query("id")
+        id:Int
+    ): ServiceResponse<Software>
 
 }
 
